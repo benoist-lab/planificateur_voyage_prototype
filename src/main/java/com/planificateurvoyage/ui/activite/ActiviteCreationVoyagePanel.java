@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JCheckBox;
 
 public class ActiviteCreationVoyagePanel extends JPanel {
 	private JTextField textField;
@@ -107,6 +108,10 @@ public class ActiviteCreationVoyagePanel extends JPanel {
 		JButton btnNewButton_1 = new JButton("Annuler");
 		btnNewButton_1.setBounds(259, 328, 89, 23);
 		add(btnNewButton_1);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("forfaitaire");
+		chckbxNewCheckBox.setBounds(242, 121, 97, 23);
+		add(chckbxNewCheckBox);
 
 	}
 }

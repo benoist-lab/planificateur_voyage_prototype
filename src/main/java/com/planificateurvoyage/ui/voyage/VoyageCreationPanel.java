@@ -46,7 +46,7 @@ public class VoyageCreationPanel extends JPanel {
 	public VoyageCreationPanel() {
 		setLayout(null);
 		
-		JLabel lblTitre = new JLabel("Création d'un voyage");
+		JLabel lblTitre = new JLabel("Cr\u00E9ation d'un voyage");
 		lblTitre.setBounds(131, 5, 188, 25);
 		lblTitre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		add(lblTitre);

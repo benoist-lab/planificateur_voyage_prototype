@@ -9,6 +9,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
 public class PersonneConsultationPanel extends JPanel {
 	
@@ -26,6 +27,8 @@ public class PersonneConsultationPanel extends JPanel {
 	private JTable table = new JTable(data,column);
 	
 	private JScrollPane sp=new JScrollPane(table);
+	private JTextField textField;
+	private JTextField textField_1;
 	////////////
 	
 	public PersonneConsultationPanel() {
@@ -37,13 +40,37 @@ public class PersonneConsultationPanel extends JPanel {
 		lblTitre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		add(lblTitre);
 		
+		//Critere de recherche
+		JLabel lblNewLabel_1 = new JLabel("nom");
+		lblNewLabel_1.setBounds(50, 44, 46, 14);
+		add(lblNewLabel_1);
+		
+		textField = new JTextField();
+		textField.setBounds(102, 41, 86, 20);
+		add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("pr\u00E9nom");
+		lblNewLabel_2.setBounds(198, 41, 46, 14);
+		add(lblNewLabel_2);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(246, 41, 86, 20);
+		add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton btnNewButton_1 = new JButton("Recherche");
+		btnNewButton_1.setBounds(342, 41, 108, 23);
+		add(btnNewButton_1);
+		
 		// Table
-		sp.setBounds(50, 50, 400, 100);
+		sp.setBounds(50, 72, 400, 100);
 		add(sp);
 		
 		JButton btnNewButton = new JButton("Ajouter");
-		btnNewButton.setBounds(350, 165, 89, 23);
+		btnNewButton.setBounds(361, 193, 89, 23);
 		add(btnNewButton);
+
 	    
 	}
 }

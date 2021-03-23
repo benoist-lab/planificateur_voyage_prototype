@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 public class ActiviteConsultationPanel extends JPanel {
 	
@@ -26,24 +27,58 @@ public class ActiviteConsultationPanel extends JPanel {
 	private JTable table = new JTable(data,column);
 	
 	private JScrollPane sp=new JScrollPane(table);
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
 	////////////
 	
 	public ActiviteConsultationPanel() {
 		
 		setLayout(null);
 		
-		JLabel lblTitre = new JLabel("Consultation des activités");
+		JLabel lblTitre = new JLabel("Consultation des activit\u00E9s");
 		lblTitre.setBounds(102, 5, 245, 25);
 		lblTitre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		add(lblTitre);
 		
 		// Table
-		sp.setBounds(50, 50, 800, 100);
+		sp.setBounds(50, 88, 800, 100);
 		add(sp);
 		
 		JButton btnNewButton = new JButton("Ajouter");
-		btnNewButton.setBounds(750, 165, 89, 23);
+		btnNewButton.setBounds(761, 199, 89, 23);
 		add(btnNewButton);
+		
+		JLabel lblNewLabel = new JLabel("Cat\u00E9gorie");
+		lblNewLabel.setBounds(50, 53, 59, 14);
+		add(lblNewLabel);
+		
+		textField = new JTextField();
+		textField.setBounds(112, 50, 86, 20);
+		add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_1 = new JLabel("libell\u00E9");
+		lblNewLabel_1.setBounds(218, 53, 46, 14);
+		add(lblNewLabel_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(261, 50, 86, 20);
+		add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("adresse");
+		lblNewLabel_2.setBounds(371, 53, 59, 14);
+		add(lblNewLabel_2);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(428, 50, 86, 20);
+		add(textField_2);
+		textField_2.setColumns(10);
+		
+		JButton btnNewButton_1 = new JButton("Recherche");
+		btnNewButton_1.setBounds(551, 49, 105, 23);
+		add(btnNewButton_1);
 		
 	}
 }

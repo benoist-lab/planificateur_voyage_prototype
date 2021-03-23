@@ -8,8 +8,12 @@ import javax.swing.WindowConstants;
 import com.planificateurvoyage.ui.activite.ActiviteConsultationPanel;
 import com.planificateurvoyage.ui.activite.ActiviteCreationPanel;
 import com.planificateurvoyage.ui.activite.ActiviteCreationVoyagePanel;
+import com.planificateurvoyage.ui.adresse.AdresseConsultationPanel;
+import com.planificateurvoyage.ui.adresse.AdresseCreationPanel;
 import com.planificateurvoyage.ui.personne.PersonneConsultationPanel;
 import com.planificateurvoyage.ui.personne.PersonneCreationPanel;
+import com.planificateurvoyage.ui.referentiel.ReferentielCategorieAjoutPanel;
+import com.planificateurvoyage.ui.referentiel.ReferentielCodePostalAjoutPanel;
 import com.planificateurvoyage.ui.voyage.VoyageConsultationPanel;
 import com.planificateurvoyage.ui.voyage.VoyageCreationPanel;
 
@@ -35,6 +39,10 @@ public class MainFrame extends JFrame {
 	private static final String VOYAGE_CONSULTATION="VOYAGE_CONSULTATION";
 	private static final String VOYAGE_CREATION="VOYAGE_CREATION";
 	private static final String ACTIVITE_CREATION_VOYAGE="ACTIVITE_CREATION_VOYAGE";
+	private static final String ADRESSE_CONSULTATION="ADRESSE_CONSULTATION";
+	private static final String ADRESSE_CREATION="ADRESSE_CREATION";
+	private static final String REFERENTIEL_CATEGORIE_AJOUT="REFERENTIEL_CATEGORIE_AJOUT";
+	private static final String REFERENTIEL_CODE_POSTAL_AJOUT="REFERENTIEL_CODE_POSTAL_AJOUT";
 	
 	// CHAMPS
 	private final PersonneConsultationPanel personneConsultation=new PersonneConsultationPanel();
@@ -44,6 +52,10 @@ public class MainFrame extends JFrame {
 	private final VoyageConsultationPanel voyageConsultation=new VoyageConsultationPanel ();
 	private final VoyageCreationPanel voyageCreation=new VoyageCreationPanel ();
 	private final ActiviteCreationVoyagePanel activiteCreationVoyage=new ActiviteCreationVoyagePanel ();
+	private final AdresseConsultationPanel adresseConsultation=new AdresseConsultationPanel ();
+	private final AdresseCreationPanel adresseCreation=new AdresseCreationPanel ();
+	private final ReferentielCategorieAjoutPanel referentielCategorieAjout=new ReferentielCategorieAjoutPanel ();
+	private final ReferentielCodePostalAjoutPanel referentielCodePostalAjoutPanel=new ReferentielCodePostalAjoutPanel ();
 	
 	private final JPanel panneauPrincipal=new JPanel();
 
@@ -70,6 +82,22 @@ public class MainFrame extends JFrame {
 		return activiteCreationVoyage;
 	}
 	
+	private AdresseConsultationPanel getAdresseConsultationPanel () {
+		return adresseConsultation;
+	}
+	
+	private AdresseCreationPanel getAdresseCreationPanel () {
+		return adresseCreation;
+	}
+	
+	private ReferentielCategorieAjoutPanel getReferentielCategorieAjoutPanel () {
+		return referentielCategorieAjout;
+	}
+	
+	private ReferentielCodePostalAjoutPanel getReferentielCodePostalAjoutPanel () {
+		return referentielCodePostalAjoutPanel;
+	}
+
 	private JPanel getPanneauPrincipal () {
 		return panneauPrincipal;
 	}
@@ -84,6 +112,10 @@ public class MainFrame extends JFrame {
 		panneauPrincipal.add(getVoyageConsultation(), VOYAGE_CONSULTATION);	
 		panneauPrincipal.add(getVoyageCreation(), VOYAGE_CREATION);	
 		panneauPrincipal.add(getActiviteCreationVoyage(), ACTIVITE_CREATION_VOYAGE);	
+		panneauPrincipal.add(getAdresseConsultationPanel(), ADRESSE_CONSULTATION);	
+		panneauPrincipal.add(getAdresseCreationPanel(), ADRESSE_CREATION);	
+		panneauPrincipal.add(getReferentielCategorieAjoutPanel(), REFERENTIEL_CATEGORIE_AJOUT);	
+		panneauPrincipal.add(getReferentielCodePostalAjoutPanel(), REFERENTIEL_CODE_POSTAL_AJOUT);	
 	}
 	
 	//CONSTRUCTEUR
@@ -109,7 +141,8 @@ public class MainFrame extends JFrame {
 			initPanneauPrincipal ();
 	
 	       /////////////////voirPanneauPrincipal (VOYAGE_CONSULTATION);
-			voirPanneauPrincipal (ACTIVITE_CREATION_VOYAGE);
+			//voirPanneauPrincipal (ACTIVITE_CREATION_VOYAGE);
+			voirPanneauPrincipal (VOYAGE_CONSULTATION);
 			
 	       setVisible(true);
 			
@@ -138,7 +171,7 @@ public class MainFrame extends JFrame {
 		});
 		menuPersonne.add(menuPersonneConsultation);
 		
-		JMenuItem menuPersonneCreation = new JMenuItem("Création");
+		JMenuItem menuPersonneCreation = new JMenuItem("Cr\u00E9ation");
 		menuPersonneCreation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println ("Personne -> création");
@@ -150,7 +183,7 @@ public class MainFrame extends JFrame {
 		menuPersonne.add(menuPersonneCreation);
 		
 		//Activité
-		JMenu menuActivite = new JMenu("Activité");
+		JMenu menuActivite = new JMenu("Activit\u00E9");
 		menuBar.add(menuActivite);
 		
 		JMenuItem menuActiviteConsultation = new JMenuItem("Consultation");
@@ -164,7 +197,7 @@ public class MainFrame extends JFrame {
 		});
 		menuActivite.add(menuActiviteConsultation);
 		
-		JMenuItem menuActiviteCreation = new JMenuItem("Création");
+		JMenuItem menuActiviteCreation = new JMenuItem("Cr\u00E9ation");
 		menuActiviteCreation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println ("Activité -> création");
@@ -189,7 +222,7 @@ public class MainFrame extends JFrame {
 		});
 		menuVoyage.add(menuVoyageConsultation);
 		
-		JMenuItem menuVoyageCreation = new JMenuItem("Création");
+		JMenuItem menuVoyageCreation = new JMenuItem("Cr\u00E9ation");
 		menuVoyageCreation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println ("Voyage -> création");
@@ -199,6 +232,58 @@ public class MainFrame extends JFrame {
 			}
 		});
 		menuVoyage.add(menuVoyageCreation);
+		
+		JMenu menuAdresse = new JMenu("Adresse");
+		menuBar.add(menuAdresse);
+		
+		JMenuItem menuAdresseConsultation = new JMenuItem("Consultation");
+		menuAdresseConsultation.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println ("Adresse -> consultation");
+				
+				voirPanneauPrincipal (ADRESSE_CONSULTATION);
+
+			}
+		});
+		menuAdresse.add(menuAdresseConsultation);
+		
+		JMenuItem menuAdresseCreation = new JMenuItem("Cr\u00E9ation");
+		menuAdresseCreation.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println ("Adresse -> création");
+				
+				voirPanneauPrincipal (ADRESSE_CREATION);
+
+			}
+		});
+		menuAdresse.add(menuAdresseCreation);
+		
+		//////////
+		
+		JMenu menuReferentiel = new JMenu("R\u00E9f\u00E9rentiel");
+		menuBar.add(menuReferentiel);
+		
+		JMenuItem menuReferentielCategorieAjout = new JMenuItem("Cat\u00E9gorie");
+		menuReferentielCategorieAjout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println ("Categorie -> ajout");
+				
+				voirPanneauPrincipal (REFERENTIEL_CATEGORIE_AJOUT);
+
+			}
+		});
+		menuReferentiel.add(menuReferentielCategorieAjout);
+		
+		JMenuItem menuReferentielCodePsotalAjout = new JMenuItem("Code Postal");
+		menuReferentielCodePsotalAjout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println ("Code Postal -> ajout");
+				
+				voirPanneauPrincipal (REFERENTIEL_CODE_POSTAL_AJOUT);
+
+			}
+		});
+		menuReferentiel.add(menuReferentielCodePsotalAjout);
 
    }
    

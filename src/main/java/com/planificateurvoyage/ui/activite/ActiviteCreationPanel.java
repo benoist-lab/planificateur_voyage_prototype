@@ -9,6 +9,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 
 public class ActiviteCreationPanel extends JPanel {
 	private JTextField textField;
@@ -18,7 +19,7 @@ public class ActiviteCreationPanel extends JPanel {
 	public ActiviteCreationPanel() {
 		setLayout(null);
 		
-		JLabel lblTitre = new JLabel("Création d'une activité");
+		JLabel lblTitre = new JLabel("Cr\u00E9ation d'une activit\u00E9");
 		lblTitre.setBounds(125, 5, 200, 25);
 		lblTitre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		add(lblTitre);
@@ -46,9 +47,15 @@ public class ActiviteCreationPanel extends JPanel {
 		add(lblNewLabel_2);
 		
 		textField_1 = new JTextField();
+		textField_1.setEditable(false);
 		textField_1.setBounds(108, 97, 241, 20);
 		add(textField_1);
 		textField_1.setColumns(10);
+		
+		
+		JButton btnNewButton_2 = new JButton("Modifier");
+		btnNewButton_2.setBounds(351, 96, 89, 23);
+		add(btnNewButton_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("cout");
 		lblNewLabel_3.setBounds(28, 125, 70, 14);
@@ -78,5 +85,10 @@ public class ActiviteCreationPanel extends JPanel {
 		JButton btnNewButton_1 = new JButton("Annuler");
 		btnNewButton_1.setBounds(260, 232, 89, 23);
 		add(btnNewButton_1);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("forfaitaire");
+		chckbxNewCheckBox.setBounds(252, 121, 97, 23);
+		add(chckbxNewCheckBox);
+
 	}
 }

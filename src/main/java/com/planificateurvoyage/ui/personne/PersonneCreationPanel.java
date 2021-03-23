@@ -14,7 +14,7 @@ public class PersonneCreationPanel extends JPanel {
 	public PersonneCreationPanel() {
 		setLayout(null);
 		
-		JLabel lblTitre = new JLabel("Création d'une personne");
+		JLabel lblTitre = new JLabel("Cr\u00E9ation d'une personne");
 		lblTitre.setBounds(116, 5, 217, 25);
 		lblTitre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		add(lblTitre);
